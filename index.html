@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人介紹</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;900&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --black: #111111;
+    --white: #ffffff;
+    --grey: #6f6f6f;
+    --line: #d9d9d9;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    align-items: end;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .avatar {
+    width: 220px;
+    height: 220px;
+    border: 1px solid var(--black);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .avatar::before,
+  .avatar::after {
+    content: "";
+    position: absolute;
+    background: var(--line);
+  }
+  .avatar::before { width: 100%; height: 1px; top: 50%; }
+  .avatar::after { height: 100%; width: 1px; left: 50%; }
+
+  .avatar span {
+    position: relative;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--grey);
+    background: var(--white);
+    padding: 4px 10px;
+  }
+
+  .heading h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  .heading .role {
+    margin-top: 14px;
+    font-size: 16px;
+    color: var(--grey);
+    font-weight: 400;
+  }
+
+  .heading .role em {
+    font-style: normal;
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  /* ---------- Sections ---------- */
+  section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  .section-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+  }
+
+  .section-label {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .section-content p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #333333;
+    max-width: 62ch;
+    font-weight: 300;
+  }
+
+  .section-content p + p {
+    margin-top: 16px;
+  }
+
+  /* ---------- Interests as a list, not cards ---------- */
+  .interest-list {
+    list-style: none;
+  }
+
+  .interest-list li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    font-size: 16px;
+  }
+
+  .interest-list li:first-child {
+    border-top: none;
+  }
+
+  .interest-list .name {
+    font-weight: 500;
+    color: var(--black);
+  }
+
+  .interest-list .desc {
+    color: var(--grey);
+    font-weight: 300;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--grey);
+    letter-spacing: 0.02em;
+  }
+
+  footer a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 1px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 640px) {
+    body { padding: 48px 20px 80px; }
+
+    header {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .avatar {
+      width: 140px;
+      height: 140px;
+    }
+
+    .heading h1 { font-size: 38px; }
+
+    .section-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .interest-list li {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="avatar">
+      <span>頭貼位置</span>
+    </div>
+    <div class="heading">
+      <h1>周 家 成 1</h1>
+      <p class="role"><em>國立勤益科技大學</em> · 資訊管理學系 二年級</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-grid">
+      <div class="section-label">自我介紹</div>
+      <div class="section-content">
+        <p>
+          我是就讀資訊管理系的大二學生。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-grid">
+      <div class="section-label">興趣</div>
+      <ul class="interest-list">
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <span>Personal Profile — 2026</span>
+    <a href="mailto:example@mail.com">example@mail.com</a>
+  </footer>
+
+</body>
+</html>
