@@ -94,3 +94,4 @@ $('todayBtn').onclick=()=>{shownMonth=new Date();shownMonth.setDate(1);selectedD
 const open=()=>{$('overlay').classList.add('show');$('taskName').focus()},close=()=>{$('overlay').classList.remove('show');$('taskForm').reset()};$('addBtn').onclick=open;$('calendarAddBtn').onclick=open;$('closeBtn').onclick=close;$('overlay').onclick=e=>{if(e.target===$('overlay'))close()};document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});$('taskForm').onsubmit=e=>{e.preventDefault();const name=$('taskName').value.trim();if(!name)return;tasks.push({id:Date.now(),name,subject:$('taskSubject').value,date:$('taskDate').value,note:$('taskNote').value.trim(),done:false});save();close();render();renderCalendar()};render();showPage(location.hash.slice(1)||'tasks');
 </script>
 </body></html>
+<!-- 更新 GitHub Pages 部署 -->
