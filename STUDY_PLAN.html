@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>STUDY / 作業管理系統草案</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#171717;--white:#fff;--grey:#777;--line:#e5e5e5;--soft:#f7f7f7}*{box-sizing:border-box}body{margin:0;background:var(--white);color:var(--black);font-family:Inter,'Noto Serif TC',sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}header{border-bottom:1px solid var(--line)}.header-inner{max-width:1160px;margin:auto;min-height:90px;display:flex;align-items:center;justify-content:space-between;padding:18px 28px}.brand{font-weight:700;letter-spacing:.16em;font-size:19px}.brand small{display:block;font-weight:400;letter-spacing:.12em;font-size:10px;color:var(--grey);margin-top:5px}nav{display:flex;gap:32px}nav a{font-size:13px;color:var(--grey);text-decoration:none;padding:8px 0}nav a.active{color:var(--black);border-bottom:1px solid var(--black)}main{max-width:1160px;margin:0 auto;padding:68px 28px 90px}.eyebrow{font-size:11px;letter-spacing:.2em;color:var(--grey);font-weight:600}.hero{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:18px 0 50px}.hero h1{font-family:'Noto Serif TC',serif;font-size:38px;font-weight:600;letter-spacing:.06em;margin:0 0 12px}.hero p{font-size:14px;color:var(--grey);margin:0}.primary{background:var(--black);border:1px solid var(--black);color:white;padding:13px 22px;font-size:13px}.primary:hover{background:#444}.layout{display:grid;grid-template-columns:220px 1fr;gap:56px}.side-title{font-size:11px;letter-spacing:.15em;color:var(--grey);margin:0 0 24px}.side-nav{display:flex;flex-direction:column;gap:4px}.side-nav button{display:flex;align-items:center;justify-content:space-between;border:0;background:transparent;padding:13px 12px;text-align:left;font-size:13px;color:#666}.side-nav button.selected{background:#f4f4f4;color:#111;font-weight:600}.side-nav button:hover{background:#f7f7f7}.count{font-size:11px;color:#999}.side-note{margin-top:44px;border-top:1px solid var(--line);padding-top:20px;color:var(--grey);font-size:12px;line-height:1.9}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:42px}.stat{border:1px solid var(--line);padding:24px}.stat .label{font-size:12px;color:var(--grey)}.stat strong{display:block;font-size:34px;margin-top:13px;font-weight:500}.stat small{font-size:11px;color:var(--grey);margin-left:5px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.section-head h2{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:600;margin:0}.filters{display:flex;gap:8px}.filters button{background:white;border:1px solid var(--line);padding:9px 14px;font-size:12px;color:var(--grey)}.filters button.active{border-color:#111;color:#111}.task{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding:23px 8px}.task:first-child{border-top:1px solid var(--line)}.check{width:19px;height:19px;accent-color:#171717;cursor:pointer}.task h3{font-size:15px;font-weight:600;margin:0 0 9px}.task.done h3{text-decoration:line-through;color:#999}.task .meta{display:flex;flex-wrap:wrap;gap:12px;font-size:11px;color:var(--grey)}.tag{background:var(--soft);padding:3px 8px}.right{display:flex;align-items:center;gap:14px}.due{font-size:12px;color:var(--grey);white-space:nowrap}.due.overdue{color:#ad3a3a}.delete{border:0;background:none;color:#999;font-size:19px;padding:4px 7px}.delete:hover{color:#111}.empty{padding:54px 20px;text-align:center;color:var(--grey);font-size:14px;border:1px dashed var(--line)}.footer{border-top:1px solid var(--line);padding:24px 28px;text-align:center;font-size:11px;letter-spacing:.12em;color:#999}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.overlay.show{display:flex}.modal{width:min(100%,490px);background:white;padding:34px;position:relative}.modal h2{font-family:'Noto Serif TC',serif;margin:0 0 8px;font-size:25px}.modal p{font-size:12px;color:var(--grey);margin:0 0 24px}.close{position:absolute;right:23px;top:17px;background:none;border:0;font-size:24px;color:#777}.field{display:block;margin:0 0 18px;font-size:12px;font-weight:600}.field input,.field select,.field textarea{display:block;width:100%;border:1px solid #ddd;background:white;border-radius:0;margin-top:8px;padding:12px;font-size:13px;color:#111}.field textarea{resize:vertical;min-height:70px}.modal .primary{width:100%;margin-top:4px}.hint{font-size:11px;color:#999;margin-top:20px}@media(max-width:768px){main{padding-top:42px}.layout{grid-template-columns:1fr;gap:34px}.side-nav{flex-direction:row;overflow:auto}.side-nav button{white-space:nowrap}.side-note{display:none}.hero h1{font-size:30px}}@media(max-width:540px){.header-inner{min-height:72px}.brand{font-size:16px}nav{gap:15px}nav a{font-size:11px}.hero{align-items:start;flex-direction:column;margin-bottom:35px}.stats{gap:8px}.stat{padding:14px}.stat strong{font-size:27px}.section-head{align-items:start;flex-direction:column}.task{gap:10px}.right{gap:4px}.due{font-size:10px}.task h3{font-size:13px}}
+
+.page[hidden]{display:none!important}
+.calendar-toolbar{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.calendar-toolbar h2{font-family:'Noto Serif TC',serif;font-size:24px;font-weight:600;margin:0 12px}
+.cal-arrow,.cal-today{border:1px solid var(--line);background:#fff;color:var(--black);padding:8px 13px}
+.cal-arrow{font-size:24px;line-height:1}.cal-today{margin-left:auto;font-size:12px}
+.calendar-weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.calendar-weekdays{border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.calendar-weekdays span{text-align:center;padding:13px 0;font-size:12px;color:var(--grey);border-right:1px solid var(--line)}
+.calendar-grid{border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.calendar-day{min-height:115px;text-align:left;padding:11px;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:8px;align-items:stretch;color:var(--black)}
+.calendar-day:hover{background:#fafafa}.calendar-day.muted{background:#fafafa;color:#aaa}.calendar-day.selected{outline:2px solid #171717;outline-offset:-2px}
+.calendar-day.today .day-number{background:#171717;color:white;border-radius:50%;width:25px;height:25px;display:grid;place-items:center}
+.day-number{font-size:12px}.cal-task{display:block;font-size:10px;line-height:1.4;padding:5px 6px;background:#f1f1f1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cal-task.done{color:#999;text-decoration:line-through}.cal-more{font-size:10px;color:#777}
+.calendar-detail{margin-top:42px}.calendar-detail .task{grid-template-columns:24px 1fr auto}
+.about-content h2{font-family:'Noto Serif TC',serif;font-size:23px;margin:0 0 16px}.about-content>p{font-size:14px;line-height:2;color:#666;margin:0 0 46px;max-width:720px}
+.about-features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:46px}.about-features>div{border:1px solid var(--line);padding:22px}.about-features strong{font-size:13px}.about-features p{font-size:12px;line-height:1.9;color:#777;margin-bottom:0}.about-side{margin-top:0}
+@media(max-width:768px){.calendar-day{min-height:90px;padding:7px}.cal-task{font-size:9px}.about-features{grid-template-columns:1fr}.about-side{display:block}}
+@media(max-width:540px){nav{gap:12px}.calendar-day{min-height:64px;padding:5px;gap:3px}.cal-task{font-size:0;padding:0;width:7px;height:7px;border-radius:50%;background:#555}.cal-task.done{background:#bbb}.cal-more{font-size:9px}.calendar-toolbar h2{font-size:19px;margin:0}.cal-arrow{padding:5px 10px}.calendar-toolbar{gap:7px}}
+
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="brand">STUDY / PLAN<small>STUDENT TASK MANAGER</small></div><nav><a href="#tasks" class="active" data-page="tasks">作業管理</a><a href="#calendar" data-page="calendar">行事曆</a><a href="#about" data-page="about">關於專案</a></nav></div></header>
+<main id="tasksPage" class="page"><div class="eyebrow">YOUR ACADEMIC WORKSPACE — 2026</div><div class="hero"><div><h1>我的作業管理</h1><p>整理每一項任務，讓學習進度更有條理。</p></div><button class="primary" id="addBtn">＋ 新增作業</button></div><div class="layout"><aside><p class="side-title">SUBJECTS / 科目分類</p><div class="side-nav" id="subjectNav"></div><div class="side-note">每一件完成的小事，<br>都是往目標前進的一步。<br><br>資料會儲存在此瀏覽器中。</div></aside><section><div class="stats"><div class="stat"><div class="label">全部作業</div><strong id="total">0</strong></div><div class="stat"><div class="label">待完成</div><strong id="pending">0</strong></div><div class="stat"><div class="label">已完成</div><strong id="finished">0</strong></div></div><div class="section-head"><h2>作業清單</h2><div class="filters"><button class="active" data-filter="all">全部</button><button data-filter="pending">待完成</button><button data-filter="done">已完成</button></div></div><div id="taskList"></div><div class="hint">提示：勾選左側方框即可完成作業；點選 × 可刪除作業。</div></section></div></main>
+<main id="calendarPage" class="page" hidden>
+  <div class="eyebrow">SCHEDULE / MONTHLY VIEW</div>
+  <div class="hero"><div><h1>我的行事曆</h1><p>依截止日期檢視作業，掌握每個月的安排。</p></div><button class="primary" id="calendarAddBtn">＋ 新增作業</button></div>
+  <div class="calendar-toolbar"><button class="cal-arrow" id="prevMonth" aria-label="上個月">‹</button><h2 id="monthTitle"></h2><button class="cal-arrow" id="nextMonth" aria-label="下個月">›</button><button class="cal-today" id="todayBtn">回到本月</button></div>
+  <div class="calendar-weekdays"><span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span></div>
+  <div class="calendar-grid" id="calendarGrid"></div>
+  <div class="calendar-detail"><div class="section-head"><h2 id="selectedDateTitle">當日作業</h2></div><div id="calendarTasks"></div></div>
+</main>
+<main id="aboutPage" class="page" hidden>
+  <div class="eyebrow">ABOUT / THE PROJECT</div>
+  <div class="hero"><div><h1>關於專案</h1><p>讓每一份作業，都有清楚的安排。</p></div></div>
+  <div class="layout"><aside><p class="side-title">PROJECT / 專案資訊</p><div class="side-note about-side">STUDY / PLAN<br>學生作業管理系統<br><br>HTML · CSS · JavaScript</div></aside>
+  <section class="about-content"><h2>專案介紹</h2><p>STUDY / PLAN 是為學生設計的輕量作業管理網站，整合作業清單、科目分類及月曆檢視，協助使用者追蹤截止日期與完成進度。</p>
+  <h2>主要功能</h2><div class="about-features"><div><strong>01 / 作業管理</strong><p>新增、完成、刪除作業，並依科目和完成狀態篩選。</p></div><div><strong>02 / 行事曆</strong><p>以月份查看作業截止日，點選日期即可查看當日任務。</p></div><div><strong>03 / 本機儲存</strong><p>透過 localStorage 保留資料，重新整理頁面也不會消失。</p></div></div>
+  <h2>技術與限制</h2><p>本專案使用原生 HTML、CSS、JavaScript 製作，採用響應式排版。資料僅儲存在目前瀏覽器，不會自動同步到其他裝置；目前沒有登入、雲端資料庫或通知功能。</p></section></div>
+</main>
+<footer class="footer">STUDY / PLAN · PERSONAL ACADEMIC TASK MANAGER · PROTOTYPE</footer>
+<div class="overlay" id="overlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close" id="closeBtn" aria-label="關閉">×</button><h2 id="modalTitle">新增作業</h2><p>填寫作業資訊，開始追蹤你的學習進度。</p><form id="taskForm"><label class="field">作業名稱<input id="taskName" maxlength="80" placeholder="例如：第五章習題" required></label><label class="field">所屬科目<select id="taskSubject"><option>統計學</option><option>網頁設計</option><option>資料庫系統</option><option>程式設計</option><option>其他</option></select></label><label class="field">截止日期<input id="taskDate" type="date" required></label><label class="field">備註（選填）<textarea id="taskNote" maxlength="200" placeholder="例如：完成第 1～5 題"></textarea></label><button class="primary" type="submit">儲存作業</button></form></div></div>
+<script>
+const KEY='study-plan-demo-v1';const subjects=['全部科目','統計學','網頁設計','資料庫系統','程式設計','其他'];
+const offset=(days)=>{const d=new Date();d.setDate(d.getDate()+days);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+const examples=[{id:1,name:'第五章機率習題',subject:'統計學',date:offset(2),note:'完成指定題目',done:false},{id:2,name:'個人網站版面設計',subject:'網頁設計',date:offset(5),note:'完成 RWD 排版',done:false},{id:3,name:'SQL 查詢練習',subject:'資料庫系統',date:offset(-1),note:'WHERE 與 GROUP BY',done:false},{id:4,name:'Java 方法練習',subject:'程式設計',date:offset(0),note:'方法與迴圈',done:true}];
+let tasks;try{const stored=JSON.parse(localStorage.getItem(KEY));tasks=Array.isArray(stored)?stored:examples}catch{tasks=examples}let selectedSubject='全部科目',filter='all';const $=id=>document.getElementById(id);const save=()=>localStorage.setItem(KEY,JSON.stringify(tasks));const safe=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(){ $('total').textContent=tasks.length;$('pending').textContent=tasks.filter(t=>!t.done).length;$('finished').textContent=tasks.filter(t=>t.done).length;$('subjectNav').innerHTML=subjects.map(s=>`<button class="${s===selectedSubject?'selected':''}" data-subject="${safe(s)}">${safe(s)}<span class="count">${tasks.filter(t=>s==='全部科目'||t.subject===s).length}</span></button>`).join('');document.querySelectorAll('[data-subject]').forEach(b=>b.onclick=()=>{selectedSubject=b.dataset.subject;render()});document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter));const visible=tasks.filter(t=>(selectedSubject==='全部科目'||t.subject===selectedSubject)&&(filter==='all'||(filter==='done'?t.done:!t.done))).sort((a,b)=>a.done-b.done||a.date.localeCompare(b.date));$('taskList').innerHTML=visible.length?visible.map(t=>{const overdue=!t.done&&t.date<offset(0);return `<div class="task ${t.done?'done':''}"><input type="checkbox" class="check" data-check="${t.id}" ${t.done?'checked':''} aria-label="完成 ${safe(t.name)}"><div><h3>${safe(t.name)}</h3><div class="meta"><span class="tag">${safe(t.subject)}</span>${t.note?`<span>${safe(t.note)}</span>`:''}</div></div><div class="right"><span class="due ${overdue?'overdue':''}">${t.done?'已完成':overdue?'已逾期 · ':''}${safe(t.date)}</span><button class="delete" data-delete="${t.id}" aria-label="刪除 ${safe(t.name)}">×</button></div></div>`}).join(''):'<div class="empty">目前沒有符合條件的作業。</div>';document.querySelectorAll('[data-check]').forEach(c=>c.onchange=()=>{const t=tasks.find(x=>x.id===Number(c.dataset.check));if(t){t.done=c.checked;save();render()}});document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{if(confirm('確定刪除這項作業嗎？')){tasks=tasks.filter(t=>t.id!==Number(b.dataset.delete));save();render()}})}
+let shownMonth=new Date();shownMonth.setDate(1);
+let selectedDate=offset(0);
+const isoDate=(year,month,day)=>`${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+function renderCalendar(){
+  const year=shownMonth.getFullYear(),month=shownMonth.getMonth();
+  $('monthTitle').textContent=`${year} 年 ${month+1} 月`;
+  const first=new Date(year,month,1).getDay();
+  const count=new Date(year,month+1,0).getDate();
+  const cells=Math.ceil((first+count)/7)*7;
+  $('calendarGrid').innerHTML=Array.from({length:cells},(_,i)=>{
+    const day=i-first+1;
+    const date=new Date(year,month,day);
+    const key=isoDate(date.getFullYear(),date.getMonth(),date.getDate());
+    const items=tasks.filter(t=>t.date===key);
+    const isCurrent=day>=1&&day<=count;
+    return `<button class="calendar-day ${isCurrent?'':'muted'} ${key===selectedDate?'selected':''} ${key===offset(0)?'today':''}" data-caldate="${key}" aria-label="${key}，${items.length} 項作業"><span class="day-number">${date.getDate()}</span>${items.slice(0,3).map(t=>`<span class="cal-task ${t.done?'done':''}" title="${safe(t.name)}">${safe(t.name)}</span>`).join('')}${items.length>3?`<span class="cal-more">+${items.length-3} 項</span>`:''}</button>`;
+  }).join('');
+  document.querySelectorAll('[data-caldate]').forEach(b=>b.onclick=()=>{selectedDate=b.dataset.caldate;renderCalendar()});
+  $('selectedDateTitle').textContent=`${selectedDate} 的作業`;
+  const dayTasks=tasks.filter(t=>t.date===selectedDate);
+  $('calendarTasks').innerHTML=dayTasks.length?dayTasks.map(t=>`<div class="task ${t.done?'done':''}"><input class="check" type="checkbox" data-calendar-check="${t.id}" ${t.done?'checked':''} aria-label="完成 ${safe(t.name)}"><div><h3>${safe(t.name)}</h3><div class="meta"><span class="tag">${safe(t.subject)}</span>${t.note?`<span>${safe(t.note)}</span>`:''}</div></div><span class="due">${t.done?'已完成':'待完成'}</span></div>`).join(''):'<div class="empty">這一天沒有安排作業。</div>';
+  document.querySelectorAll('[data-calendar-check]').forEach(b=>b.onchange=()=>{const t=tasks.find(t=>t.id===Number(b.dataset.calendarCheck));if(t){t.done=b.checked;save();render();renderCalendar()}});
+}
+function showPage(page){
+  const allowed=['tasks','calendar','about'];if(!allowed.includes(page))page='tasks';
+  for(const p of allowed)$(p+'Page').hidden=p!==page;
+  document.querySelectorAll('[data-page]').forEach(a=>a.classList.toggle('active',a.dataset.page===page));
+  if(page==='calendar')renderCalendar();
+  window.scrollTo(0,0);
+}
+document.querySelectorAll('[data-page]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();location.hash=a.dataset.page;showPage(a.dataset.page)}));
+window.addEventListener('hashchange',()=>showPage(location.hash.slice(1)));
+$('prevMonth').onclick=()=>{shownMonth.setMonth(shownMonth.getMonth()-1);renderCalendar()};
+$('nextMonth').onclick=()=>{shownMonth.setMonth(shownMonth.getMonth()+1);renderCalendar()};
+$('todayBtn').onclick=()=>{shownMonth=new Date();shownMonth.setDate(1);selectedDate=offset(0);renderCalendar()};
+const open=()=>{$('overlay').classList.add('show');$('taskName').focus()},close=()=>{$('overlay').classList.remove('show');$('taskForm').reset()};$('addBtn').onclick=open;$('calendarAddBtn').onclick=open;$('closeBtn').onclick=close;$('overlay').onclick=e=>{if(e.target===$('overlay'))close()};document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});$('taskForm').onsubmit=e=>{e.preventDefault();const name=$('taskName').value.trim();if(!name)return;tasks.push({id:Date.now(),name,subject:$('taskSubject').value,date:$('taskDate').value,note:$('taskNote').value.trim(),done:false});save();close();render();renderCalendar()};render();showPage(location.hash.slice(1)||'tasks');
+</script>
+</body></html>
